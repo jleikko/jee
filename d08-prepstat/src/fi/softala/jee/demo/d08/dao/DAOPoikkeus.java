@@ -1,0 +1,21 @@
+package fi.softala.jee.demo.d08.dao;
+
+public class DAOPoikkeus extends Exception {
+
+	public DAOPoikkeus() {
+		super("Tietokantapoikkeus");
+	}
+
+	public DAOPoikkeus(String viesti) {
+		super(viesti);
+	}
+
+	public DAOPoikkeus(Throwable aiheuttaja) {
+		super(aiheuttaja);
+	}
+
+	public DAOPoikkeus(String viesti, Throwable aiheuttaja) {
+		super(viesti, aiheuttaja);
+	}
+
+}
