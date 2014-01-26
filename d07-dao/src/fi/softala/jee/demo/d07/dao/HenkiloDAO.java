@@ -45,12 +45,12 @@ public class HenkiloDAO {
 				henkilot.add(h);
 			}
 		} catch(IOException e) {
-			e.printStackTrace();
 			System.out.println("Tietokantayhteyden asetuksien hakeminen aiheutti virheen.");
+			e.printStackTrace();
 		} catch(Exception e) {
 			//JOTAIN VIRHETTÄ TAPAHTUI
-			e.printStackTrace();
 			System.out.println("Tietokantahaku aiheutti virheen");
+			e.printStackTrace();
 		}finally {
 			//LOPULTA AINA SULJETAAN YHTEYS
 			try {
@@ -58,6 +58,7 @@ public class HenkiloDAO {
 					yhteys.close();
 			} catch(Exception e) {
 				System.out.println("Tietokantayhteys ei jostain syystä suostu menemään kiinni.");
+				e.printStackTrace();
 			}
 		}
 		

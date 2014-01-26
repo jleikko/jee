@@ -42,9 +42,9 @@ public class HenkiloListaTietokantahakuServlet extends HttpServlet {
 		
 		//TIETOKANTAHAKU
 		
-		String username = "projekti";
-		String password = "toFEmC72t";
-		String url = "jdbc:mariadb://localhost/projekti";
+		String username = "javaee";
+		String password = "deNUfh27t";
+		String url = "jdbc:mariadb://localhost/javaee";
 
 		Connection yhteys = null;
 		

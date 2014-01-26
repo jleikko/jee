@@ -1,11 +1,9 @@
 package fi.softala.jee.demo.d08.dao;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -122,10 +120,10 @@ public class HenkiloDAO {
 			
 			//suoritetaan lause
 			lause.executeUpdate();
-			
+			System.out.println("LISÄTTIIN HENKILÖ TIETOKANTAAN: "+h);
 		} catch(Exception e) {
 			//JOTAIN VIRHETTÄ TAPAHTUI
-			throw new DAOPoikkeus("Tietokantahaku aiheutti virheen", e);
+			throw new DAOPoikkeus("Henkilön lisäämisyritys aiheutti virheen", e);
 		}finally {
 			//LOPULTA AINA SULJETAAN YHTEYS
 			suljeYhteys(yhteys);

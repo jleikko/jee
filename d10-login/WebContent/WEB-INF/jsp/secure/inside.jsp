@@ -9,9 +9,9 @@
 <title>Etusivu</title>
 </head>
 <body>
-
-<h1>Olet järjestelmän sisällä.</h1>
-<p><a href="kirjaudu_ulos">Kirjaudu ulos</a>
+<p style="text-align: right;"><c:out value="${kayttajatiedot.username}"/><br/>
+<a href="kirjaudu_ulos">Kirjaudu ulos</a>
+<h1 style="text-align: center;">Olet järjestelmän sisällä</h1>
 </body>
 </html>
 

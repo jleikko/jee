@@ -35,7 +35,7 @@ public class SiteServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-
+		
 		//otetaan käyttäjätiedot sessiosta
 		WebUser user = (WebUser) request.getSession().getAttribute(SESSION_ATTR_WEBUSER);
 

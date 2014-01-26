@@ -1,56 +1,20 @@
 package fi.softala.jee.demo.d09.dao.webuser;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import fi.softala.jee.demo.d09.bean.WebUser;
+import fi.softala.jee.demo.d09.dao.DAO;
 import fi.softala.jee.demo.d09.dao.DAOPoikkeus;
-import fi.softala.jee.demo.d09.dao.DBConnectionProperties;
 
-public class WebUserDAO {
+public class WebUserDAO extends DAO {
 
 	public WebUserDAO() throws DAOPoikkeus {
-		try {
-			Class.forName(DBConnectionProperties.getInstance().getProperty("driver")).newInstance();
-		} catch(Exception e) {
-			throw new DAOPoikkeus("Tietokannan ajuria ei kyetty lataamaan.", e);
-		}
+		super();
 	}
 
-	
-	/**
-	 * Avaa tietokantayhteyden
-	 * @return avatun tietokantayhteyden
-	 * @throws Exception Mikäli yhteyden avaaminen ei onnistu
-	 */
-	private Connection avaaYhteys() throws DAOPoikkeus {
-		
-		try {
-			return DriverManager.getConnection(
-					DBConnectionProperties.getInstance().getProperty("url"), 
-					DBConnectionProperties.getInstance().getProperty("username"),
-					DBConnectionProperties.getInstance().getProperty("password"));
-		} catch (Exception e) {
-			throw new DAOPoikkeus("Tietokantayhteyden avaaminen epäonnistui", e);
-		}
-	}
-	
-	/**
-	 * Sulkee tietokantayhteyden
-	 * @param yhteys Suljettava yhteys
-	 */
-	private void suljeYhteys(Connection yhteys) throws DAOPoikkeus {
-		try {
-			if (yhteys != null && !yhteys.isClosed())
-				yhteys.close();
-		} catch(Exception e) {
-			throw new DAOPoikkeus("Tietokantayhteys ei jostain syystä suostu menemään kiinni.", e);
-		}
-	}
-	
 	/**
 	 * Lisää uuden webuserin tietokantaan
 	 * @param kayttaja uuden webuserin tiedot

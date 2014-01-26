@@ -2,6 +2,8 @@ package fi.softala.jee.demo.d09.dao;
 
 public class DAOPoikkeus extends Exception {
 
+	private static final long serialVersionUID = 1L;
+
 	public DAOPoikkeus() {
 		super("Tietokantapoikkeus");
 	}
