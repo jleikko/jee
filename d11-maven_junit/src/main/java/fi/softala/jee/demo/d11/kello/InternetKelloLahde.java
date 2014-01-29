@@ -14,7 +14,13 @@ import org.apache.commons.net.ntp.TimeInfo;
 public class InternetKelloLahde implements KelloLahde {
 
 	public Date haeAjanhetki() {
-		String palvelin = "time-a.nist.gov";   
+		String palvelin = null;
+		try {
+			palvelin = NTPProperties.getInstance().getProperty("server_domain");
+		} catch(Exception e) {
+			throw new RuntimeException("aikapalvelimen osoitetta ei kyetty lukemaan properties-tiedostosta", e);
+		}
+		
         NTPUDPClient client = new NTPUDPClient();
         InetAddress osoite;
         TimeInfo aikatieto;
