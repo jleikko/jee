@@ -18,7 +18,7 @@ public class InternetKelloLahde implements KelloLahde {
 		try {
 			palvelin = NTPProperties.getInstance().getProperty("server_domain");
 		} catch(Exception e) {
-			throw new RuntimeException("aikapalvelimen osoitetta ei kyetty lukemaan properties-tiedostosta", e);
+			throw new InternetKelloLahdePoikkeus("aikapalvelimen osoitetta ei kyetty lukemaan properties-tiedostosta", e);
 		}
 		
         NTPUDPClient client = new NTPUDPClient();
@@ -28,9 +28,9 @@ public class InternetKelloLahde implements KelloLahde {
 			osoite = InetAddress.getByName(palvelin);
 			aikatieto = client.getTime(osoite);
 		} catch (UnknownHostException e) {
-			throw new RuntimeException("aikapalvelimen osoitetta ei pystytty selvittämään",e);
+			throw new InternetKelloLahdePoikkeus("aikapalvelimen osoitetta ei pystytty selvittämään",e);
 		} catch (IOException e) {
-			throw new RuntimeException("aikatietoa ei kyetty noutamaan internetistä", e);
+			throw new InternetKelloLahdePoikkeus("aikatietoa ei kyetty noutamaan internetistä", e);
 		}
         long millisekunnitEpochista = aikatieto.getReturnTime();
         Date ajanhetki = new Date(millisekunnitEpochista);
