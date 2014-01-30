@@ -16,8 +16,7 @@ public class SuomiKello implements Kello {
 	
 	private SimpleDateFormat aikaMuotoilija = new SimpleDateFormat("HH:mm");
 	private SimpleDateFormat pvmMuotoilija = new SimpleDateFormat("dd.MM.yyyy");
-	private TimeZone easternEuropeanTime = TimeZone
-			.getTimeZone("Europe/Helsinki");
+	private TimeZone easternEuropeanTime = TimeZone.getTimeZone("Europe/Helsinki");
 
 	public SuomiKello(KelloLahde lahde) {
 		this.lahde = lahde;
