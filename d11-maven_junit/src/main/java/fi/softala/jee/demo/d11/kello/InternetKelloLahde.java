@@ -10,6 +10,7 @@ import org.apache.commons.net.ntp.TimeInfo;
 
 /**
  * Hankkii aikatiedon internetistä palvelimelta time-a.nist.gov
+ * Tämä koodi vaatii apache commons net -kirjaston.
  */
 public class InternetKelloLahde implements KelloLahde {
 
@@ -20,7 +21,7 @@ public class InternetKelloLahde implements KelloLahde {
 		} catch(Exception e) {
 			throw new InternetKelloLahdePoikkeus("aikapalvelimen osoitetta ei kyetty lukemaan properties-tiedostosta", e);
 		}
-		
+
         NTPUDPClient client = new NTPUDPClient();
         InetAddress osoite;
         TimeInfo aikatieto;
