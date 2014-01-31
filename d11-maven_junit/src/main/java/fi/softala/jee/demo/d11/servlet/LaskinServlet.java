@@ -3,6 +3,7 @@ package fi.softala.jee.demo.d11.servlet;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,6 +13,7 @@ import fi.softala.jee.demo.d11.laskin.Laskin;
 /**
  * Servlet implementation class LaskinServlet
  */
+@WebServlet("/laskin")
 public class LaskinServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
