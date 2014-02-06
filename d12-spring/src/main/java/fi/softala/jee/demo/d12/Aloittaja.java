@@ -13,14 +13,20 @@ public class Aloittaja {
 	 */
 	public static void main(String[] args) {
 		
-		logger.debug("Aloitellaan ohjelmaa.");
+		logger.info("Aloitellaan ohjelmaa.");
 		
+		
+		logger.debug("ladataan application context");
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-conf.xml");
+		
 		System.out.println(context.getBean("auto"));
 		System.out.println(context.getBean("auto"));
+		
+		logger.debug("suljetaan application context");
 		context.close();
 		
-		logger.debug("Ohjelman suoritus päättyi.");
+		
+		logger.info("Ohjelman suoritus päättyi.");
 	}
 
 }

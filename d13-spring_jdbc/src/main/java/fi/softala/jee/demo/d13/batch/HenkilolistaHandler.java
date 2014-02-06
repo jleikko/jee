@@ -31,10 +31,10 @@ public class HenkilolistaHandler {
 		System.out.println("HAETAAN YKSI (ID=3)");
 		System.out.println("-------------------");
 		
-		Henkilo john = dao.etsi(3);
-		System.out.println(john.getId());
-		System.out.println(john.getEtunimi());
-		System.out.println(john.getSukunimi());
+		Henkilo outi = dao.etsi(3);
+		System.out.println(outi.getId());
+		System.out.println(outi.getEtunimi());
+		System.out.println(outi.getSukunimi());
 		
 		System.out.println("-------------------");
 		System.out.println("LISÄTÄÄN UUSI");

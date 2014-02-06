@@ -4,11 +4,11 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="auto" class="fi.softala.jee.demo.d12.Auto" scope="prototype">
+	<bean id="auto" class="fi.softala.jee.demo.d12.Auto">
 		<property name="nimi" value="mersu"/>
 		<property name="jalat">
 			<list>
-				<ref bean="suksi1"/>
+				<ref bean="rengas1"/>
 				<ref bean="rengas2"/>
 				<ref bean="rengas3"/>
 				<ref bean="rengas4"/>
