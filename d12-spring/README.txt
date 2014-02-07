@@ -1,5 +1,5 @@
 *******************
-* JAVA EE DEMO 11 *
+* JAVA EE DEMO 12 *
 *******************
 
 SISÄLTÖ
@@ -8,7 +8,7 @@ SISÄLTÖ
 * Dependency Injection
 * Spring XML Configuration
 * Bean Scope
-* Log4J
+* Log4J & SLF4J
 
 TOIMINTA
 --------
