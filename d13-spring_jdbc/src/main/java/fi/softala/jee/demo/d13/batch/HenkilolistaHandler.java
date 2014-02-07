@@ -2,7 +2,6 @@ package fi.softala.jee.demo.d13.batch;
 
 import java.util.List;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import fi.softala.jee.demo.d13.bean.Henkilo;
@@ -15,7 +14,8 @@ public class HenkilolistaHandler {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+		
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
 		HenkiloDAO dao = (HenkiloDAO)context.getBean("daoLuokka");
 		
 		System.out.println("-------------------");
@@ -52,6 +52,8 @@ public class HenkilolistaHandler {
 		for (Henkilo h : henkilot) {
 			System.out.println(h.getEtunimi());
 		}
+		
+		context.close();
 
 	}
 
