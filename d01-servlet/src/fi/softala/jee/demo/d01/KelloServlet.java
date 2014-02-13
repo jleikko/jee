@@ -27,17 +27,17 @@ public class KelloServlet extends HttpServlet {
     }
 
 	/**
-	 * Tälle Java-metodille tulee selaimelta HTTP-protokollan GET-kutsut
+	 * T√§lle Java-metodille tulee selaimelta HTTP-protokollan GET-kutsut
 	 * 
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//tulostetaan lokiin kutsujan ip-osoite
 		System.out.println("Servlettiin saapui kutsu osoitteesta: " +request.getRemoteAddr());
-		//tarvitaan kirjoituskone, jolla voidaan kirjoittaa tekstiä webbiselaimelle takaisin päin
+		//tarvitaan kirjoituskone, jolla voidaan kirjoittaa teksti√§ webbiselaimelle takaisin p√§in
 		PrintWriter wout = response.getWriter();
 
-		//selvitetään nykyhetki:
+		//selvitet√§√§n nykyhetki:
 		//uusi java.util.Date-olio alustetaan oletuksena nykyhetkeen
 		Date nykyhetki = new Date();
 		
