@@ -12,10 +12,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.TestExecutionListeners;
-import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -27,9 +23,6 @@ import fi.softala.jee.demo.d14.dao.HenkiloDAO;
 import fi.softala.jee.demo.d14.dao.HenkiloaEiLoydyPoikkeus;
 
 @RunWith(MockitoJUnitRunner.class)
-@WebAppConfiguration
-@ContextConfiguration("file:src/main/webapp/WEB-INF/spring-servlet.xml")
-@TestExecutionListeners({ DependencyInjectionTestExecutionListener.class })
 public class HenkiloControllerTest {
 
 	@Inject
