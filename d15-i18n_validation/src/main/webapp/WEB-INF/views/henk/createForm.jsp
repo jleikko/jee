@@ -23,11 +23,17 @@
 		<spring:message code="henk.create.heading" />
 	</h1>
 	
-	<form:errors path="*" cssClass="Virheblokki" element="div" />
+
 	
 		<form:form modelAttribute="henkilo" method="post">
 		  	<fieldset>		
 				<legend><spring:message code="henk.create.legend" /></legend>
+				
+				<spring:hasBindErrors name="henkilo">
+					<p class="Virheotsikko"><spring:message code="henk.create.errors" />:</p>
+					<div class="Virheblokki"><form:errors path="*"/></div>
+				</spring:hasBindErrors>
+				
 				<p>
 					<form:label	path="etunimi"><spring:message code="henk.create.firstname" /></form:label><br/>
 					<form:input path="etunimi" cssErrorClass="VirheellinenKentta"/> <form:errors path="etunimi" cssClass="Virheteksti"/>		

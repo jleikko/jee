@@ -56,6 +56,13 @@ button {
 	border-color: red;
 	border-width: 1px;
 	border-style: dashed;
+	padding: 10px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
+	font-size: small;
+}
+.Virheotsikko {
+	color: red;
+	font-style: italic;
+	font-size: medium;
 }
