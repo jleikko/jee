@@ -52,11 +52,14 @@ button {
 	font-size: small;
 }
 .Virheblokki {
-		background-color: #FFFAFA;
+	background-color: #FFFAFA;
 	border-color: red;
 	border-width: 1px;
 	border-style: dashed;
-	padding: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	font-size: small;
