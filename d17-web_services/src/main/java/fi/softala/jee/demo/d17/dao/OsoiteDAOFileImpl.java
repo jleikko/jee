@@ -1,16 +1,11 @@
 package fi.softala.jee.demo.d17.dao;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 
 import fi.softala.jee.demo.d17.bean.Osoite;
 import fi.softala.jee.demo.d17.bean.OsoiteImpl;
@@ -26,7 +21,6 @@ public class OsoiteDAOFileImpl implements OsoiteDAO {
 			tulostus.println(osoite);
 			tulostus.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

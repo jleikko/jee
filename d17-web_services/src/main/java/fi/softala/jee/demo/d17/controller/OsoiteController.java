@@ -2,23 +2,17 @@ package fi.softala.jee.demo.d17.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-
-import javax.servlet.ServletConfig;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.context.ServletConfigAware;
 
-import fi.softala.jee.demo.d17.dao.OsoiteDAO;
-import fi.softala.jee.demo.d17.dao.OsoiteWrapper;
 import fi.softala.jee.demo.d17.bean.Osoite;
-import fi.softala.jee.demo.d17.bean.OsoiteImpl;
+import fi.softala.jee.demo.d17.dao.OsoiteDAO;
 import fi.softala.jee.demo.d17.dao.OsoiteDAOFileImpl;
+import fi.softala.jee.demo.d17.dao.OsoiteWrapper;
 
 @Controller
 @RequestMapping(value = "/osoitteet")
