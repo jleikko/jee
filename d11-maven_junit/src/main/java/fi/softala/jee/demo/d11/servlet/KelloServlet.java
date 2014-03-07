@@ -23,7 +23,7 @@ public class KelloServlet extends HttpServlet {
      * Default constructor. 
      */
     public KelloServlet() {
-        // TODO Auto-generated constructor stub
+    	super();
     }
 
 	/**
