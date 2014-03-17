@@ -16,35 +16,26 @@ import fi.softala.jee.demo.d11.laskin.Laskin;
 @WebServlet("/laskin")
 public class LaskinServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public LaskinServlet() {
-        super();
-    }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		//EKA LUKU
-		int eka = 0;
-		try {
-			eka = Integer.parseInt(request.getParameter("luku1"));
-		} catch(NumberFormatException e) {
-			System.out.println("luku 1 ei ole kunnollinen kokonaisluku");
-		}
-		//TOKA LUKU
-		int toka = 0;
-		try {
-			toka = Integer.parseInt(request.getParameter("luku2"));
-		} catch(NumberFormatException e) {
-			System.out.println("luku 2 ei ole kunnollinen kokonaisluku");
-		}
-		
-		//LASKETAAN SUMMA LASKIMELLA
+	public LaskinServlet() {
+		super();
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+
+		// LOMAKKEESEEN SYÖTETYT LUVUT
+		int eka = getIntParameter("luku1", request);
+		int toka = getIntParameter("luku2", request);
+
+		// LASKETAAN SUMMA LASKIMELLA
 		Laskin laskin = new Laskin();
 		int tulos = 0;
 		String operaatio = request.getParameter("operaatio");
@@ -55,13 +46,25 @@ public class LaskinServlet extends HttpServlet {
 		} else {
 			tulos = 0;
 		}
-		
-		//FORWARDOIDAAN JSP:LLE (MUOTOILU)
+
+		// FORWARDOIDAAN JSP:LLE (MUOTOILU)
 		request.setAttribute("tulos", tulos);
-		request.getRequestDispatcher("WEB-INF/jsp/laskin.jsp").forward(request, response);
-		
-		
-		
+		request.getRequestDispatcher("WEB-INF/jsp/laskin.jsp").forward(request,
+				response);
+
+	}
+
+	private int getIntParameter(String paramNimi, HttpServletRequest request) {
+		int iArvo = 0;
+		String sArvo = request.getParameter(paramNimi);
+		if (sArvo != null) {
+			try {
+				iArvo = Integer.parseInt(sArvo);
+			} catch (NumberFormatException e) {
+				System.out.println(sArvo +" ei ole kunnollinen kokonaisluku.");
+			}
+		}
+		return iArvo;
 	}
 
 }
