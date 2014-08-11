@@ -1,14 +1,12 @@
 package fi.softala.jee.demo.d13.bean;
 
-
 public class Henkilo {
-	
+
 	private int id;
 
 	private String etunimi;
 
 	private String sukunimi;
-
 
 	public int getId() {
 		return id;
@@ -33,13 +31,11 @@ public class Henkilo {
 	public void setSukunimi(String sukunimi) {
 		this.sukunimi = sukunimi;
 	}
-	
-	
+
 	@Override
 	public String toString() {
-		return "HenkiloImpl [id=" + id + ", etunimi=" + etunimi
-				+ ", sukunimi=" + sukunimi + "]";
+		return "HenkiloImpl [id=" + id + ", etunimi=" + etunimi + ", sukunimi="
+				+ sukunimi + "]";
 	}
-	
 
 }
