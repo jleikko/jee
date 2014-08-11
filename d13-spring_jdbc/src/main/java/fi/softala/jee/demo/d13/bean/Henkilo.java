@@ -1,17 +1,45 @@
 package fi.softala.jee.demo.d13.bean;
 
-public interface Henkilo {
 
-	public abstract int getId();
+public class Henkilo implements HenkiloVanha {
+	
+	private int id;
 
-	public abstract void setId(int id);
+	private String etunimi;
 
-	public abstract String getEtunimi();
+	private String sukunimi;
 
-	public abstract void setEtunimi(String etunimi);
 
-	public abstract String getSukunimi();
+	public int getId() {
+		return id;
+	}
 
-	public abstract void setSukunimi(String sukunimi);
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getEtunimi() {
+		return etunimi;
+	}
+
+	public void setEtunimi(String etunimi) {
+		this.etunimi = etunimi;
+	}
+
+	public String getSukunimi() {
+		return sukunimi;
+	}
+
+	public void setSukunimi(String sukunimi) {
+		this.sukunimi = sukunimi;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "HenkiloImpl [id=" + id + ", etunimi=" + etunimi
+				+ ", sukunimi=" + sukunimi + "]";
+	}
+	
 
 }
