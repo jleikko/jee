@@ -1,7 +1,7 @@
 package fi.softala.jee.demo.d13.bean;
 
 
-public class Henkilo implements HenkiloVanha {
+public class Henkilo {
 	
 	private int id;
 

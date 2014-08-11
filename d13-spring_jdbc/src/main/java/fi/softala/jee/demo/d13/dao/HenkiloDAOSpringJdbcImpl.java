@@ -6,7 +6,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import fi.softala.jee.demo.d13.bean.Henkilo;
-import fi.softala.jee.demo.d13.bean.HenkiloVanha;
+
 
 public class HenkiloDAOSpringJdbcImpl implements HenkiloDAO {
 
@@ -20,7 +20,7 @@ public class HenkiloDAOSpringJdbcImpl implements HenkiloDAO {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 
-	public void talleta(HenkiloVanha h) {
+	public void talleta(Henkilo h) {
 		String sql = "insert into henkilo(etunimi, sukunimi) values(?,?)";
 		Object[] parametrit = new Object[] { h.getEtunimi(), h.getSukunimi() };
 

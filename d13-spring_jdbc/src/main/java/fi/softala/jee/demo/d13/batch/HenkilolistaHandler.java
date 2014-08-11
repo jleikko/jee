@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import fi.softala.jee.demo.d13.bean.HenkiloVanha;
 import fi.softala.jee.demo.d13.bean.Henkilo;
 import fi.softala.jee.demo.d13.dao.HenkiloDAO;
 
@@ -23,7 +22,7 @@ public class HenkilolistaHandler {
 		System.out.println("-------------------");
 		
 		List<Henkilo> henkilot = dao.haeKaikki();
-		for (HenkiloVanha h : henkilot) {
+		for (Henkilo h : henkilot) {
 			System.out.println(h.getEtunimi());
 		}
 		
@@ -31,7 +30,7 @@ public class HenkilolistaHandler {
 		System.out.println("HAETAAN YKSI (ID=3)");
 		System.out.println("-------------------");
 		
-		HenkiloVanha outi = dao.etsi(3);
+		Henkilo outi = dao.etsi(3);
 		System.out.println(outi.getId());
 		System.out.println(outi.getEtunimi());
 		System.out.println(outi.getSukunimi());
@@ -40,7 +39,7 @@ public class HenkilolistaHandler {
 		System.out.println("LISÄTÄÄN UUSI");
 		System.out.println("-------------------");
 		
-		HenkiloVanha henk = new Henkilo();
+		Henkilo henk = new Henkilo();
 		henk.setEtunimi("Uusi");
 		henk.setSukunimi("Heppu");
 		dao.talleta(henk);
@@ -49,7 +48,7 @@ public class HenkilolistaHandler {
 		System.out.println("HAETAAN KAIKKI");
 		System.out.println("-------------------");
 		henkilot = dao.haeKaikki();
-		for (HenkiloVanha h : henkilot) {
+		for (Henkilo h : henkilot) {
 			System.out.println(h.getEtunimi());
 		}
 		

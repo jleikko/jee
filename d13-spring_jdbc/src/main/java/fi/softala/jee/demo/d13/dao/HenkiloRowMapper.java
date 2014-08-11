@@ -5,7 +5,6 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import fi.softala.jee.demo.d13.bean.HenkiloVanha;
 import fi.softala.jee.demo.d13.bean.Henkilo;
 
 public class HenkiloRowMapper implements RowMapper<Henkilo> {
