@@ -1,4 +1,4 @@
 # SWD4TN004 - Java EE
 
-![HH Logo](http://www.haaga-helia.fi/sites/default/files/Kuvat-ja-liitteet/HAAGA-HELIAsta/Viestinta/haaga_helia_suomi.jpg | height = 50px)
+![HH Logo](http://blogit.haaga-helia.fi/wp-content/uploads/2014/12/HH-logo-290x128.jpg)
 
